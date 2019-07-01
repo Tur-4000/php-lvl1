@@ -1,0 +1,15 @@
+{
+    "name": "tur-4000/php-project-lvl1",
+    "description": "Brain games",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Turbanov Valeriy",
+            "email": "tur.4000@gmail.com"
+        }
+    ],
+    "bin": [
+        "bin/brain-games"
+    ],
+    "require": {}
+}
