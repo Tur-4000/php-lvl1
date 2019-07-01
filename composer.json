@@ -1,6 +1,7 @@
 {
     "name": "tur-4000/php-project-lvl1",
     "description": "Brain games",
+    "keywords": ["game", "brain"],
     "type": "project",
     "authors": [
         {
@@ -11,5 +12,8 @@
     "bin": [
         "bin/brain-games"
     ],
-    "require": {}
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0"
+    }
 }
