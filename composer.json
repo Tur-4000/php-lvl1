@@ -3,6 +3,7 @@
     "description": "Brain games",
     "keywords": ["game", "brain"],
     "type": "project",
+    "license": "MIT",
     "authors": [
         {
             "name": "Turbanov Valeriy",
