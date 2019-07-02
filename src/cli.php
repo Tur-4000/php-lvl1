@@ -3,10 +3,30 @@
 namespace BrainGames\Cli;
 
 use function \cli\line;
+use function \cli\prompt;
+use function BrainGames\Games\evenGame;
 
-function run()
+function greeting()
+{
+    $playerName = prompt('May I have your name?');
+    line("Hello, ${playerName}!" . PHP_EOL);
+    return $playerName;
+}
+
+function run($game = false)
 {
     line("Welcome to the Brain Games!");
-    $playerName = \cli\prompt('May I have your name?');
-    line("Hello, %s!", $playerName);
+
+    if ($game === 'even-game') {
+        line('Answer "yes" if number even otherwise answer "no".' . PHP_EOL);
+        $playerName = greeting();
+        
+        if (evenGame()) {
+            line("Congratulations, ${playerName}!");
+        } else {
+            line("Let's try again, ${playerName}!");
+        }
+    } else {
+        greeting();
+    }
 }

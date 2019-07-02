@@ -10,7 +10,8 @@
         }
     ],
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "minimum-stability": "dev",
     "scripts": {
@@ -18,7 +19,8 @@
     },
     "autoload": {
         "files": [
-            "src/cli.php"
+            "src/cli.php",
+            "src/games.php"
         ]
     },
     "require": {
