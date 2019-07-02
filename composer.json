@@ -13,7 +13,7 @@
         "bin/brain-games",
         "bin/brain-even"
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "dev-master",
     "scripts": {
         "phpcs": "phpcs"
     },
