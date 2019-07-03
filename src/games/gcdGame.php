@@ -7,6 +7,7 @@ use function \cli\prompt;
 use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
 use function BrainGames\Games\game;
+use function BrainGames\Utils\gcd;
 
 function runGcdGame()
 {
@@ -25,9 +26,4 @@ function runGcdGame()
     };
 
     game($playerName, $question);
-}
-
-function gcd($a, $b)
-{
-    return ($b > 0) ? gcd($b, $a % $b) : $a;
 }

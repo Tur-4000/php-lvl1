@@ -23,6 +23,7 @@
     "autoload": {
         "files": [
             "src/cli.php",
+            "src/utils.php",
             "src/games/game.php",
             "src/games/evenGame.php",
             "src/games/calcGame.php",
