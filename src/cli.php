@@ -15,7 +15,7 @@ function greeting()
 
 function run($game = false)
 {
-    line("Welcome to the Brain Games!");
+    line("\nWelcome to the Brain Games!");
 
     if ($game === 'even-game') {
         line('Answer "yes" if number even otherwise answer "no".' . PHP_EOL);
