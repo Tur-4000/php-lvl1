@@ -7,7 +7,7 @@ use function \cli\prompt;
 
 function answer()
 {
-    return prompt('Your answer: ');
+    return prompt('Your answer');
 }
 
 function endGame($playerName)
