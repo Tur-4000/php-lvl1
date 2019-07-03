@@ -4,7 +4,7 @@ namespace BrainGames\Cli;
 
 use function \cli\line;
 use function \cli\prompt;
-use function BrainGames\Games\evenGame;
+use function BrainGames\Games\runEvenGame;
 
 function greeting()
 {
@@ -20,12 +20,7 @@ function run($game = false)
     if ($game === 'even-game') {
         line('Answer "yes" if number even otherwise answer "no".' . PHP_EOL);
         $playerName = greeting();
-        
-        if (evenGame()) {
-            line("Congratulations, ${playerName}!");
-        } else {
-            line("Let's try again, ${playerName}!");
-        }
+        runEvenGame($playerName);
     } else {
         greeting();
     }

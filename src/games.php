@@ -5,6 +5,17 @@ namespace BrainGames\Games;
 use function \cli\line;
 use function \cli\prompt;
 
+function runEvenGame($playerName)
+{
+    $result = evenGame();
+
+    if ($result) {
+        line("Congratulations, ${playerName}!");
+    } else {
+        line("Let's try again, ${playerName}!");
+    }
+}
+
 function evenGame()
 {
     $i = 0;
