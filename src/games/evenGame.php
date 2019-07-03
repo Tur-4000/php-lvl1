@@ -4,7 +4,7 @@ namespace BrainGames\Games;
 
 use function \cli\line;
 use function \cli\prompt;
-use function BrainGames\Cli\greeting;
+use function BrainGames\Games\greeting;
 use function BrainGames\Games\game;
 
 function runEvenGame()

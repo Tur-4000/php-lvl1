@@ -5,6 +5,13 @@ namespace BrainGames\Games;
 use function \cli\line;
 use function \cli\prompt;
 
+function greeting()
+{
+    $playerName = prompt('May I have your name?');
+    line("Hello, ${playerName}!" . PHP_EOL);
+    return $playerName;
+}
+
 function answer()
 {
     return prompt('Your answer');

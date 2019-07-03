@@ -3,17 +3,11 @@
 namespace BrainGames\Cli;
 
 use function \cli\line;
-use function \cli\prompt;
+use function BrainGames\Games\greeting;
 use function BrainGames\Games\runEvenGame;
 use function BrainGames\Games\runCalcGame;
 use function BrainGames\Games\runGcdGame;
-
-function greeting()
-{
-    $playerName = prompt('May I have your name?');
-    line("Hello, ${playerName}!" . PHP_EOL);
-    return $playerName;
-}
+use function BrainGames\Games\runProgressionGame;
 
 function run($game = null)
 {
@@ -25,6 +19,8 @@ function run($game = null)
         runCalcGame();
     } elseif ($game === 'gcd-game') {
         runGcdGame();
+    } elseif ($game === 'progression-game') {
+        runProgressionGame();
     } else {
         greeting();
     }
