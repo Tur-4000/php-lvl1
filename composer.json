@@ -14,8 +14,6 @@
         "bin/brain-games",
         "bin/brain-even"
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "scripts": {
         "phpcs": "phpcs"
     },
@@ -30,5 +28,7 @@
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "*"
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
