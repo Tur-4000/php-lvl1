@@ -6,6 +6,7 @@ use function \cli\line;
 use function \cli\prompt;
 use function BrainGames\Games\runEvenGame;
 use function BrainGames\Games\runCalcGame;
+use function BrainGames\Games\runGcdGame;
 
 function greeting()
 {
@@ -22,6 +23,8 @@ function run($game = null)
         runEvenGame();
     } elseif ($game === 'calc-game') {
         runCalcGame();
+    } elseif ($game === 'gcd-game') {
+        runGcdGame();
     } else {
         greeting();
     }
