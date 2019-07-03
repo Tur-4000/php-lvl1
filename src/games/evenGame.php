@@ -4,11 +4,13 @@ namespace BrainGames\Games;
 
 use function \cli\line;
 use function \cli\prompt;
+use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
 use function BrainGames\Games\game;
 
 function runEvenGame()
 {
+    welcome();
     line('Answer "yes" if number even otherwise answer "no".' . PHP_EOL);
 
     $playerName = greeting();

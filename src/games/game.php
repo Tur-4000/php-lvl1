@@ -12,6 +12,11 @@ function greeting()
     return $playerName;
 }
 
+function welcome()
+{
+    line("\nWelcome to the Brain Games!");
+}
+
 function answer()
 {
     return prompt('Your answer');

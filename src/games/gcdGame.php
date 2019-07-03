@@ -4,11 +4,13 @@ namespace BrainGames\Games;
 
 use function \cli\line;
 use function \cli\prompt;
+use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
 use function BrainGames\Games\game;
 
 function runGcdGame()
 {
+    welcome();
     line('What is the result of the expression?' . PHP_EOL);
     $playerName = greeting();
     $question = function () {
