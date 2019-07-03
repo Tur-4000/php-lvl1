@@ -8,5 +8,9 @@
 
 [![asciicast](https://asciinema.org/a/254620.svg)](https://asciinema.org/a/254620)
 
+## Brain Even Game
+
+[![asciicast](https://asciinema.org/a/255030.svg)](https://asciinema.org/a/255030)
+
 
 
