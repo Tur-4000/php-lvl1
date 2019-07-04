@@ -7,6 +7,7 @@ use function \cli\prompt;
 use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
 use function BrainGames\Games\game;
+use function BrainGames\Utils\genProgression;
 
 function runProgressionGame()
 {
@@ -15,13 +16,17 @@ function runProgressionGame()
     $playerName = greeting();
 
     $question = function () {
-        $num = rand(1, 10);
-
-        $question = "${num}";
+        $startOfProgression = rand(1, 10);
+        $delta = rand(1, 10);
+        $progression = genProgression($startOfProgression, $delta);
+        $missingNumOffset = rand(0, 9);
+        $missingNum = $progression[$missingNumOffset];
+        $progression[$missingNumOffset] = '..';
+        $question = implode(' ', $progression);
 
         line("Question: ${question}");
 
-        return $num;
+        return $missingNum;
     };
 
     game($playerName, $question);
