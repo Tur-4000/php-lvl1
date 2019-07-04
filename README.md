@@ -14,19 +14,19 @@
 
 Игра "Проверка на чётность". Суть игры в следующем: пользователю показывается случайное число. И ему нужно ответить yes, если число чётное, или no - если нечётное.
 
-[![asciicast](https://asciinema.org/a/255030.svg)](https://asciinema.org/a/255030)
+[![asciicast](https://asciinema.org/a/255442.svg)](https://asciinema.org/a/255442)
 
 ## Brain Calc Game
 
 Игра "Калькулятор". Суть игры в следующем: пользователю показывается случайное математическое выражение, например 35 + 16, которое нужно вычислить и записать правильный ответ.
 
-[![asciicast](https://asciinema.org/a/255304.svg)](https://asciinema.org/a/255304)
+[![asciicast](https://asciinema.org/a/255443.svg)](https://asciinema.org/a/255443)
 
 ## Brain GCD Game
 
 Игра "наибольший общий делитель (НОД)". Суть игры в следующем: пользователю показывается два случайных числа, например, 25 50. Пользователь должен вычислить и ввести наибольший общий делитель этих чисел.
 
-[![asciicast](https://asciinema.org/a/255337.svg)](https://asciinema.org/a/255337)
+[![asciicast](https://asciinema.org/a/255445.svg)](https://asciinema.org/a/255445)
 
 ## Brain Progression Game
 
@@ -34,3 +34,10 @@
 Игроку показывается ряд чисел, образующий арифметическую прогрессию, с пропущенным одним из чисел. Игрок должен определить пропущенное число.
 
 [![asciicast](https://asciinema.org/a/255412.svg)](https://asciinema.org/a/255412)
+
+## Brain Progression Game
+
+Игра "Простое ли число?".
+Игроку показывается число и предлагается определить является ли это число простым.
+
+[![asciicast](https://asciinema.org/a/255451.svg)](https://asciinema.org/a/255451)
