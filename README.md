@@ -6,6 +6,8 @@
 
 ## Installation
 
+`composer global require tur-4000/php-project-lvl1`
+
 [![asciicast](https://asciinema.org/a/254620.svg)](https://asciinema.org/a/254620)
 
 ## Brain Even Game
@@ -19,3 +21,7 @@
 ## Brain GCD Game
 
 [![asciicast](https://asciinema.org/a/255337.svg)](https://asciinema.org/a/255337)
+
+## Brain Progression Game
+
+[![asciicast](https://asciinema.org/a/255412.svg)](https://asciinema.org/a/255412)
