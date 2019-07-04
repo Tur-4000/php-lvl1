@@ -17,3 +17,14 @@ function genProgression($firstNum, $delta)
 
     return $progression;
 }
+
+function isPrime($num)
+{
+    $divisor = 2;
+    $upperBorder = $num / 2;
+    while ($num % $divisor !== 0) {
+        $divisor += 1;
+    }
+
+    return $num === $divisor;
+}

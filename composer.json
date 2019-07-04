@@ -10,16 +10,17 @@
             "email": "tur.4000@gmail.com"
         }
     ],
+    "scripts": {
+        "phpcs": "phpcs"
+    },
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
-        "bin/brain-progression"
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
-    "scripts": {
-        "phpcs": "phpcs"
-    },
     "autoload": {
         "files": [
             "src/cli.php",
@@ -28,7 +29,8 @@
             "src/games/evenGame.php",
             "src/games/calcGame.php",
             "src/games/gcdGame.php",
-            "src/games/progressionGame.php"
+            "src/games/progressionGame.php",
+            "src/games/primeGame.php"
         ]
     },
     "require": {

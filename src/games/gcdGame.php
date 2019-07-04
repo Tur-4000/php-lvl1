@@ -3,7 +3,6 @@
 namespace BrainGames\Games;
 
 use function \cli\line;
-use function \cli\prompt;
 use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
 use function BrainGames\Games\game;
@@ -12,7 +11,7 @@ use function BrainGames\Utils\gcd;
 function runGcdGame()
 {
     welcome();
-    line('What is the result of the expression?' . PHP_EOL);
+    line('Find the greatest common divisor of given numbers.' . PHP_EOL);
     $playerName = greeting();
     $question = function () {
         $num1 = rand(1, 99);
