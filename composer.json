@@ -10,8 +10,11 @@
             "email": "tur.4000@gmail.com"
         }
     ],
-    "scripts": {
-        "phpcs": "phpcs"
+    "require": {
+        "wp-cli/php-cli-tools": "dev-master"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
     },
     "bin": [
         "bin/brain-games",
@@ -33,11 +36,8 @@
             "src/games/primeGame.php"
         ]
     },
-    "require": {
-        "wp-cli/php-cli-tools": "dev-master"
-    },
-    "require-dev": {
-        "squizlabs/php_codesniffer": "*"
+    "scripts": {
+        "phpcs": "phpcs"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
