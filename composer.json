@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "wp-cli/php-cli-tools": "dev-master@dev"
+        "wp-cli/php-cli-tools": "@dev"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "*"
