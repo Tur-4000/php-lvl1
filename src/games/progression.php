@@ -3,18 +3,12 @@
 namespace BrainGames\Games;
 
 use function \cli\line;
-use function BrainGames\Games\welcome;
-use function BrainGames\Games\greeting;
 use function BrainGames\Games\play;
 
 const PROGRESSION_LEN = 9;
 
 function runProgressionGame()
 {
-    welcome();
-    line('What number is missing in the progression?' . PHP_EOL);
-    $playerName = greeting();
-
     $question = function () {
         $startOfProgression = rand(1, 10);
         $delta = rand(1, 10);
@@ -29,7 +23,7 @@ function runProgressionGame()
         return $missingItem;
     };
 
-    play($playerName, $question);
+    play($question, 'progression');
 }
 
 function genProgression($firstNum, $delta)

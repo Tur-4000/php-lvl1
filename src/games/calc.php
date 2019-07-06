@@ -3,8 +3,6 @@
 namespace BrainGames\Games;
 
 use function \cli\line;
-use function BrainGames\Games\welcome;
-use function BrainGames\Games\greeting;
 use function BrainGames\Games\play;
 
 const OPERATIONS = ['+', '-', '*'];
@@ -12,10 +10,6 @@ const LEN_OPERATIONS = 2;
 
 function runCalcGame()
 {
-    welcome();
-    line('What is the result of the expression?' . PHP_EOL);
-    $playerName = greeting();
-
     $question = function () {
         $num1 = rand(0, 30);
         $num2 = rand(0, 30);
@@ -40,5 +34,5 @@ function runCalcGame()
         return $correctAnswer;
     };
 
-    play($playerName, $question);
+    play($question, 'calc');
 }
