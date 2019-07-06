@@ -15,7 +15,7 @@ function runPrimeGame()
         return (isPrime($question)) ? 'yes' : 'no';
     };
 
-    play($question, 'gcd');
+    play($question, 'prime');
 }
 
 function isPrime($num)
