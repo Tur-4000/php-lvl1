@@ -7,6 +7,8 @@ use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
 use function BrainGames\Games\play;
 
+const PROGRESSION_LEN = 9;
+
 function runProgressionGame()
 {
     welcome();
@@ -17,7 +19,7 @@ function runProgressionGame()
         $startOfProgression = rand(1, 10);
         $delta = rand(1, 10);
         $progression = genProgression($startOfProgression, $delta);
-        $missingItemOffset = rand(0, 9);
+        $missingItemOffset = rand(0, PROGRESSION_LEN);
         $missingItem = $progression[$missingItemOffset];
         $progression[$missingItemOffset] = '..';
         $question = implode(' ', $progression);
