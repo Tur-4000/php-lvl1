@@ -17,7 +17,6 @@
         "squizlabs/php_codesniffer": "*"
     },
     "bin": [
-        "bin/brain-games",
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
@@ -26,14 +25,12 @@
     ],
     "autoload": {
         "files": [
-            "src/cli.php",
-            "src/utils.php",
-            "src/games/game.php",
-            "src/games/evenGame.php",
-            "src/games/calcGame.php",
-            "src/games/gcdGame.php",
-            "src/games/progressionGame.php",
-            "src/games/primeGame.php"
+            "src/game.php",
+            "src/games/even.php",
+            "src/games/calc.php",
+            "src/games/gcd.php",
+            "src/games/progression.php",
+            "src/games/prime.php"
         ]
     },
     "scripts": {

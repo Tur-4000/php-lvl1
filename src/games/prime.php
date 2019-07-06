@@ -5,8 +5,7 @@ namespace BrainGames\Games;
 use function \cli\line;
 use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
-use function BrainGames\Games\game;
-use function BrainGames\Utils\isPrime;
+use function BrainGames\Games\play;
 
 function runPrimeGame()
 {
@@ -17,10 +16,20 @@ function runPrimeGame()
     $question = function () {
         $question = rand(2, 100);
 
-        line("Question: ${question}");
+        line("Question: $question");
 
         return (isPrime($question)) ? 'yes' : 'no';
     };
 
-    game($playerName, $question);
+    play($playerName, $question);
+}
+
+function isPrime($num)
+{
+    $divisor = 2;
+    while ($num % $divisor !== 0) {
+        $divisor += 1;
+    }
+
+    return $num === $divisor;
 }

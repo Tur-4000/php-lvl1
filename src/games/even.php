@@ -6,7 +6,7 @@ use function \cli\line;
 use function \cli\prompt;
 use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
-use function BrainGames\Games\game;
+use function BrainGames\Games\play;
 
 function runEvenGame()
 {
@@ -18,10 +18,15 @@ function runEvenGame()
     $question = function () {
         $question = rand(0, 99);
 
-        line("Question: ${question}");
+        line("Question: $question");
 
-        return ($question % 2 === 0) ? 'yes' : 'no';
+        return isEven($question);
     };
 
-    game($playerName, $question);
+    play($playerName, $question);
+}
+
+function isEven($num)
+{
+    return ($num % 2 === 0) ? 'yes' : 'no';
 }
