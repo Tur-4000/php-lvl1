@@ -16,7 +16,7 @@ function runPrimeGame()
     $question = function () {
         $question = rand(2, 100);
 
-        line("Question: ${question}");
+        line("Question: $question");
 
         return (isPrime($question)) ? 'yes' : 'no';
     };

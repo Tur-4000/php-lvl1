@@ -18,7 +18,7 @@ function runEvenGame()
     $question = function () {
         $question = rand(0, 99);
 
-        line("Question: ${question}");
+        line("Question: $question");
 
         return ($question % 2 === 0) ? 'yes' : 'no';
     };

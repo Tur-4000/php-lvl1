@@ -22,7 +22,7 @@ function runProgressionGame()
         $progression[$missingNumOffset] = '..';
         $question = implode(' ', $progression);
 
-        line("Question: ${question}");
+        line("Question: $question");
 
         return $missingNum;
     };

@@ -16,9 +16,9 @@ function runGcdGame()
         $num1 = rand(1, 99);
         $num2 = rand(1, 99);
 
-        $question = "${num1} ${num2}";
+        $question = "$num1 $num2";
 
-        line("Question: ${question}");
+        line("Question: $question");
 
         return gcd($num1, $num2);
     };
