@@ -5,7 +5,7 @@ namespace BrainGames\Games;
 use function \cli\line;
 use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
-use function BrainGames\Games\game;
+use function BrainGames\Games\play;
 
 function runGcdGame()
 {
@@ -23,7 +23,7 @@ function runGcdGame()
         return gcd($num1, $num2);
     };
 
-    game($playerName, $question);
+    play($playerName, $question);
 }
 
 function gcd($a, $b)

@@ -46,11 +46,11 @@ function tour($question)
     return false;
 }
 
-function game($playerName, $question, $i = 1)
+function play($playerName, $question, $i = 1)
 {
     if ($i > 3) {
         return endGame($playerName);
     }
 
-    return tour($question) ? game($playerName, $question, $i += 1) : gameOver($playerName);
+    return tour($question) ? play($playerName, $question, $i += 1) : gameOver($playerName);
 }

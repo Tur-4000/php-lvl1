@@ -5,7 +5,7 @@ namespace BrainGames\Games;
 use function \cli\line;
 use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
-use function BrainGames\Games\game;
+use function BrainGames\Games\play;
 
 function runProgressionGame()
 {
@@ -27,7 +27,7 @@ function runProgressionGame()
         return $missingNum;
     };
 
-    game($playerName, $question);
+    play($playerName, $question);
 }
 
 function genProgression($firstNum, $delta)
