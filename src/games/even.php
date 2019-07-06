@@ -20,8 +20,13 @@ function runEvenGame()
 
         line("Question: $question");
 
-        return ($question % 2 === 0) ? 'yes' : 'no';
+        return isEven($question);
     };
 
     play($playerName, $question);
+}
+
+function isEven($num)
+{
+    return ($num % 2 === 0) ? 'yes' : 'no';
 }
