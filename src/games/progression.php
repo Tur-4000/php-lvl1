@@ -6,7 +6,6 @@ use function \cli\line;
 use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
 use function BrainGames\Games\game;
-use function BrainGames\Utils\genProgression;
 
 function runProgressionGame()
 {
@@ -29,4 +28,15 @@ function runProgressionGame()
     };
 
     game($playerName, $question);
+}
+
+function genProgression($firstNum, $delta)
+{
+    $progression = [$firstNum];
+
+    for ($i = 1; $i < 10; $i += 1) {
+        $progression[] += $progression[$i - 1] + $delta;
+    }
+
+    return $progression;
 }

@@ -6,7 +6,6 @@ use function \cli\line;
 use function BrainGames\Games\welcome;
 use function BrainGames\Games\greeting;
 use function BrainGames\Games\game;
-use function BrainGames\Utils\isPrime;
 
 function runPrimeGame()
 {
@@ -23,4 +22,14 @@ function runPrimeGame()
     };
 
     game($playerName, $question);
+}
+
+function isPrime($num)
+{
+    $divisor = 2;
+    while ($num % $divisor !== 0) {
+        $divisor += 1;
+    }
+
+    return $num === $divisor;
 }
