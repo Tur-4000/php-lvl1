@@ -27,11 +27,11 @@
         "files": [
             "src/utils.php",
             "src/game.php",
-            "src/games/evenGame.php",
-            "src/games/calcGame.php",
-            "src/games/gcdGame.php",
-            "src/games/progressionGame.php",
-            "src/games/primeGame.php"
+            "src/games/even.php",
+            "src/games/calc.php",
+            "src/games/gcd.php",
+            "src/games/progression.php",
+            "src/games/prime.php"
         ]
     },
     "scripts": {
