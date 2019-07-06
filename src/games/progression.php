@@ -17,14 +17,14 @@ function runProgressionGame()
         $startOfProgression = rand(1, 10);
         $delta = rand(1, 10);
         $progression = genProgression($startOfProgression, $delta);
-        $missingNumOffset = rand(0, 9);
-        $missingNum = $progression[$missingNumOffset];
-        $progression[$missingNumOffset] = '..';
+        $missingItemOffset = rand(0, 9);
+        $missingItem = $progression[$missingItemOffset];
+        $progression[$missingItemOffset] = '..';
         $question = implode(' ', $progression);
 
         line("Question: $question");
 
-        return $missingNum;
+        return $missingItem;
     };
 
     play($playerName, $question);
