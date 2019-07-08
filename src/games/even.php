@@ -12,7 +12,7 @@ function runEvenGame()
 
         line("Question: $question");
 
-        return isEven($question);
+        return isEven($question) ? 'yes' : 'no';
     };
 
     play($question, 'even');
@@ -20,5 +20,5 @@ function runEvenGame()
 
 function isEven($num)
 {
-    return ($num % 2 === 0) ? 'yes' : 'no';
+    return $num % 2 === 0;
 }
