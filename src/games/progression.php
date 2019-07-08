@@ -5,17 +5,15 @@ namespace BrainGames\Games;
 use function \cli\line;
 use function BrainGames\Games\play;
 
-const PROGRESSION_LEN = 9;
+const PROGRESSION_LENGTH = 10;
 
 function runProgressionGame()
 {
     $question = function () {
-        $startOfProgression = rand(1, 10);
-        $delta = rand(1, 10);
-        $progression = genProgression($startOfProgression, $delta);
-        $missingItemOffset = rand(0, PROGRESSION_LEN);
-        $missingItem = $progression[$missingItemOffset];
-        $progression[$missingItemOffset] = '..';
+        $progression = genProgression();
+        $missingItemIndex = rand(0, PROGRESSION_LENGTH - 1);
+        $missingItem = $progression[$missingItemIndex];
+        $progression[$missingItemIndex] = '..';
         $question = implode(' ', $progression);
 
         line("Question: $question");
@@ -26,12 +24,17 @@ function runProgressionGame()
     play($question, 'progression');
 }
 
-function genProgression($firstNum, $delta)
+function genProgression()
 {
-    $progression = [$firstNum];
+    $progression = [];
+    $delta = rand(1, 10);
 
-    for ($i = 1; $i < 10; $i += 1) {
-        $progression[] += $progression[$i - 1] + $delta;
+    for ($i = 0; $i < PROGRESSION_LENGTH; $i += 1) {
+        if ($i === 0) {
+            $progression[] = rand(1, 10);
+        } else {
+            $progression[] = $progression[$i - 1] + $delta;
+        }
     }
 
     return $progression;
