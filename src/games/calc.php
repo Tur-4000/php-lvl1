@@ -30,9 +30,10 @@ function runCalcGame()
                 break;
         }
 
-        line("Question: $question");
-
-        return $correctAnswer;
+        return [
+            'correctAnswer' => $correctAnswer,
+            'question' => $question
+        ];
     };
 
     play($question, $instruction);

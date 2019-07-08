@@ -20,9 +20,10 @@ function runProgressionGame()
 
         $question = implode(' ', $progression);
 
-        line("Question: $question");
-
-        return $missingItem;
+        return [
+            'correctAnswer' => $missingItem,
+            'question' => $question
+        ];
     };
 
     play($question, $instruction);

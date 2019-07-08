@@ -12,9 +12,12 @@ function runPrimeGame()
     $question = function () {
         $question = rand(2, 100);
 
-        line("Question: $question");
+        $correctAnswer = (isPrime($question)) ? 'yes' : 'no';
 
-        return (isPrime($question)) ? 'yes' : 'no';
+        return [
+            'correctAnswer' => $correctAnswer,
+            'question' => $question
+        ];
     };
 
     play($question, $instruction);

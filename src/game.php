@@ -27,7 +27,10 @@ function play($question, $instruction, $playerName = null, $i = FIRST_TOUR)
     };
 
     $tour = function () use ($question) {
-        $correctAnswer = $question();
+        $question = $question();
+        $correctAnswer = $question['correctAnswer'];
+        
+        line("Question: {$question['question']}");
         $playerAnswer = prompt('Your answer');
 
         if ($correctAnswer == $playerAnswer) {

@@ -8,13 +8,16 @@ use function BrainGames\Games\play;
 function runEvenGame()
 {
     $instruction = 'Answer "yes" if number even otherwise answer "no".';
-    
+
     $question = function () {
         $question = rand(0, 99);
 
-        line("Question: $question");
+        $correctAnswer = isEven($question) ? 'yes' : 'no';
 
-        return isEven($question) ? 'yes' : 'no';
+        return [
+            'correctAnswer' => $correctAnswer,
+            'question' => $question
+        ];
     };
 
     play($question, $instruction);
