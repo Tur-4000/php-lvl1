@@ -11,9 +11,11 @@ function runProgressionGame()
 {
     $question = function () {
         $progression = genProgression();
-        $missingItemIndex = rand(0, PROGRESSION_LENGTH - 1);
+
+        $missingItemIndex = array_rand($progression);
         $missingItem = $progression[$missingItemIndex];
         $progression[$missingItemIndex] = '..';
+
         $question = implode(' ', $progression);
 
         line("Question: $question");
