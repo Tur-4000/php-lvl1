@@ -6,14 +6,13 @@ use function \cli\line;
 use function BrainGames\Games\play;
 
 const OPERATIONS = ['+', '-', '*'];
-const LEN_OPERATIONS = 2;
 
 function runCalcGame()
 {
     $question = function () {
         $num1 = rand(0, 30);
         $num2 = rand(0, 30);
-        $operation = OPERATIONS[rand(0, LEN_OPERATIONS)];
+        $operation = OPERATIONS[array_rand(OPERATIONS)];
 
         $question = "$num1 $operation $num2";
 
