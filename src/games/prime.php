@@ -20,6 +20,10 @@ function runPrimeGame()
 
 function isPrime($num)
 {
+    if ($num < 2) {
+        return false;
+    }
+    
     $divisor = 2;
     while ($num % $divisor !== 0) {
         $divisor += 1;

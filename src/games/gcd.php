@@ -15,13 +15,13 @@ function runGcdGame()
 
         line("Question: $question");
 
-        return gcd($num1, $num2);
+        return getGcd($num1, $num2);
     };
 
     play($question, 'gcd');
 }
 
-function gcd($a, $b)
+function getGcd($a, $b)
 {
-    return ($b > 0) ? gcd($b, $a % $b) : $a;
+    return ($b > 0) ? getGcd($b, $a % $b) : $a;
 }
