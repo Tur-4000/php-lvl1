@@ -7,21 +7,26 @@ use function BrainGames\Games\play;
 
 function runGcdGame()
 {
+    $instruction = 'Find the greatest common divisor of given numbers.';
+
     $question = function () {
         $num1 = rand(1, 99);
         $num2 = rand(1, 99);
 
         $question = "$num1 $num2";
 
-        line("Question: $question");
+        $correctAnswer = getGcd($num1, $num2);
 
-        return gcd($num1, $num2);
+        return [
+            'correctAnswer' => $correctAnswer,
+            'question' => $question
+        ];
     };
 
-    play($question, 'gcd');
+    play($question, $instruction);
 }
 
-function gcd($a, $b)
+function getGcd($a, $b)
 {
-    return ($b > 0) ? gcd($b, $a % $b) : $a;
+    return ($b > 0) ? getGcd($b, $a % $b) : $a;
 }
