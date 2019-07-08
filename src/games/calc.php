@@ -9,6 +9,8 @@ const OPERATIONS = ['+', '-', '*'];
 
 function runCalcGame()
 {
+    $instruction = 'What is the result of the expression?';
+
     $question = function () {
         $num1 = rand(0, 30);
         $num2 = rand(0, 30);
@@ -33,5 +35,5 @@ function runCalcGame()
         return $correctAnswer;
     };
 
-    play($question, 'calc');
+    play($question, $instruction);
 }

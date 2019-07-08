@@ -7,6 +7,8 @@ use function BrainGames\Games\play;
 
 function runEvenGame()
 {
+    $instruction = 'Answer "yes" if number even otherwise answer "no".';
+    
     $question = function () {
         $question = rand(0, 99);
 
@@ -15,7 +17,7 @@ function runEvenGame()
         return isEven($question) ? 'yes' : 'no';
     };
 
-    play($question, 'even');
+    play($question, $instruction);
 }
 
 function isEven($num)

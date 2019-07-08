@@ -9,6 +9,8 @@ const PROGRESSION_LENGTH = 10;
 
 function runProgressionGame()
 {
+    $instruction = 'What number is missing in the progression?';
+
     $question = function () {
         $progression = genProgression();
 
@@ -23,7 +25,7 @@ function runProgressionGame()
         return $missingItem;
     };
 
-    play($question, 'progression');
+    play($question, $instruction);
 }
 
 function genProgression()
