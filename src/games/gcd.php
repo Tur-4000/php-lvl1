@@ -9,7 +9,7 @@ function runGcdGame()
 {
     $instruction = 'Find the greatest common divisor of given numbers.';
 
-    $question = function () {
+    $makeQuestion = function () {
         $num1 = rand(1, 99);
         $num2 = rand(1, 99);
 
@@ -23,7 +23,7 @@ function runGcdGame()
         ];
     };
 
-    play($question, $instruction);
+    play($makeQuestion, $instruction);
 }
 
 function getGcd($a, $b)

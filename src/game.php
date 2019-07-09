@@ -20,6 +20,10 @@ function play(callable $getQuestion, string $instruction)
         line("Let's try again, ${playerName}!");
     };
 
+    $endGame = function () use ($playerName) {
+        return line("Congratulations, ${playerName}!");
+    };
+
     for ($i = FIRST_TOUR; $i <= LAST_TOUR; $i += 1) {
         $question = $getQuestion();
         $correctAnswer = $question['correctAnswer'];
@@ -35,5 +39,5 @@ function play(callable $getQuestion, string $instruction)
         }
     }
 
-    return line("Congratulations, ${playerName}!");
+    return $endGame();
 }
