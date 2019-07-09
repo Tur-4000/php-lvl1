@@ -4,6 +4,7 @@ namespace BrainGames\Games;
 
 use function \cli\line;
 use function BrainGames\Games\play;
+use function BrainGames\Games\makeQuestion;
 
 function runEvenGame()
 {
@@ -14,10 +15,11 @@ function runEvenGame()
 
         $correctAnswer = isEven($question) ? 'yes' : 'no';
 
-        return [
-            'correctAnswer' => $correctAnswer,
-            'question' => $question
-        ];
+        return makeQuestion($correctAnswer, $question);
+        // return [
+        //     'correctAnswer' => $correctAnswer,
+        //     'question' => $question
+        // ];
     };
 
     play($makeQuestion, $instruction);

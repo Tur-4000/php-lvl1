@@ -26,9 +26,11 @@ function play(callable $getQuestion, string $instruction)
 
     for ($i = FIRST_TOUR; $i <= LAST_TOUR; $i += 1) {
         $question = $getQuestion();
-        $correctAnswer = $question['correctAnswer'];
-        
-        line("Question: {$question['question']}");
+ 
+        $correctAnswer = getCorrectAnswer($question);
+        $q = getQuestion($question);
+
+        line("Question: {$q}");
         $playerAnswer = prompt('Your answer');
 
         if ($correctAnswer == $playerAnswer) {
@@ -40,4 +42,25 @@ function play(callable $getQuestion, string $instruction)
     }
 
     return $endGame();
+}
+
+function makeQuestion($correctAnswer, $question)
+{
+    return function ($func) use ($correctAnswer, $question) {
+        return $func($correctAnswer, $question);
+    };
+}
+
+function getCorrectAnswer($func)
+{
+    return $func(function ($correctAnswer, $question) {
+        return $correctAnswer;
+    });
+}
+
+function getQuestion($func)
+{
+    return $func(function ($correctAnswer, $question) {
+        return $question;
+    });
 }
