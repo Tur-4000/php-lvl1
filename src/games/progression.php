@@ -11,7 +11,7 @@ function runProgressionGame()
 {
     $instruction = 'What number is missing in the progression?';
 
-    $question = function () {
+    $makeQuestion = function () {
         $progression = genProgression();
 
         $missingItemIndex = array_rand($progression);
@@ -26,7 +26,7 @@ function runProgressionGame()
         ];
     };
 
-    play($question, $instruction);
+    play($makeQuestion, $instruction);
 }
 
 function genProgression()

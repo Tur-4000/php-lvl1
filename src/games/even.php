@@ -9,7 +9,7 @@ function runEvenGame()
 {
     $instruction = 'Answer "yes" if number even otherwise answer "no".';
 
-    $question = function () {
+    $makeQuestion = function () {
         $question = rand(0, 99);
 
         $correctAnswer = isEven($question) ? 'yes' : 'no';
@@ -20,7 +20,7 @@ function runEvenGame()
         ];
     };
 
-    play($question, $instruction);
+    play($makeQuestion, $instruction);
 }
 
 function isEven($num)

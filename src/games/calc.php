@@ -11,7 +11,7 @@ function runCalcGame()
 {
     $instruction = 'What is the result of the expression?';
 
-    $question = function () {
+    $makeQuestion = function () {
         $num1 = rand(0, 30);
         $num2 = rand(0, 30);
         $operation = OPERATIONS[array_rand(OPERATIONS)];
@@ -36,5 +36,5 @@ function runCalcGame()
         ];
     };
 
-    play($question, $instruction);
+    play($makeQuestion, $instruction);
 }

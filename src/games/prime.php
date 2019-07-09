@@ -9,7 +9,7 @@ function runPrimeGame()
 {
     $instruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-    $question = function () {
+    $makeQuestion = function () {
         $question = rand(2, 100);
 
         $correctAnswer = (isPrime($question)) ? 'yes' : 'no';
@@ -20,7 +20,7 @@ function runPrimeGame()
         ];
     };
 
-    play($question, $instruction);
+    play($makeQuestion, $instruction);
 }
 
 function isPrime($num)
