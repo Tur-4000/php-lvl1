@@ -8,25 +8,21 @@ use function \cli\prompt;
 const FIRST_TOUR = 1;
 const LAST_TOUR = 3;
 
-function play($question, $instruction, $playerName = null, $i = FIRST_TOUR)
+function play($question, $instruction)
 {
-    if ($i === FIRST_TOUR) {
-        line("\nWelcome to the Brain Games!");
-        line($instruction . PHP_EOL);
-        
-        $playerName = prompt('May I have your name?');
-        line("Hello, ${playerName}!" . PHP_EOL);
-    }
-
-    if ($i > LAST_TOUR) {
-        return line("Congratulations, ${playerName}!");
-    }
+    line("\nWelcome to the Brain Games!");
+    line($instruction . PHP_EOL);
+    
+    $playerName = prompt('May I have your name?');
+    line("Hello, ${playerName}!" . PHP_EOL);
 
     $gameOver = function () use ($playerName) {
         line("Let's try again, ${playerName}!");
     };
 
-    $tour = function () use ($question) {
+    $i = FIRST_TOUR;
+
+    while ($i <= LAST_TOUR) {
         $question = $question();
         $correctAnswer = $question['correctAnswer'];
         
@@ -35,12 +31,13 @@ function play($question, $instruction, $playerName = null, $i = FIRST_TOUR)
 
         if ($correctAnswer == $playerAnswer) {
             line("Correct!");
-            return true;
+        } else {
+            line("'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.");
+            return $gameOver();
         }
 
-        line("'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.");
-        return false;
-    };
+        $i += 1;
+    }
 
-    return $tour() ? play($question, $instruction, $playerName, $i += 1) : $gameOver();
+    return line("Congratulations, ${playerName}!");
 }
