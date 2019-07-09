@@ -8,7 +8,7 @@ use function \cli\prompt;
 const FIRST_TOUR = 1;
 const LAST_TOUR = 3;
 
-function play($question, $instruction)
+function play($getQuestion, $instruction)
 {
     line("\nWelcome to the Brain Games!");
     line($instruction . PHP_EOL);
@@ -23,7 +23,7 @@ function play($question, $instruction)
     $i = FIRST_TOUR;
 
     while ($i <= LAST_TOUR) {
-        $question = $question();
+        $question = $getQuestion();
         $correctAnswer = $question['correctAnswer'];
         
         line("Question: {$question['question']}");
