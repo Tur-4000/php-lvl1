@@ -2,7 +2,6 @@
 
 namespace BrainGames\Games;
 
-use function \cli\line;
 use function BrainGames\Games\play;
 
 function runGcdGame()
