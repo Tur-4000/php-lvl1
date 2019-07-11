@@ -29,7 +29,8 @@ function isPrime($num)
     }
     
     $divisor = 2;
-    while ($num % $divisor !== 0) {
+    $halfOfNum = ceil($num / 2);
+    while ($num % $divisor !== 0 && $divisor < $halfOfNum) {
         $divisor += 1;
     }
 
