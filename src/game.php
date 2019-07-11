@@ -16,14 +16,6 @@ function play(callable $getQuestion, string $instruction)
     $playerName = prompt('May I have your name?');
     line("Hello, ${playerName}!" . PHP_EOL);
 
-    $gameOver = function () use ($playerName) {
-        line("Let's try again, ${playerName}!");
-    };
-
-    $endGame = function () use ($playerName) {
-        return line("Congratulations, ${playerName}!");
-    };
-
     for ($i = FIRST_TOUR; $i <= LAST_TOUR; $i += 1) {
         $question = $getQuestion();
         $correctAnswer = $question['correctAnswer'];
@@ -35,9 +27,9 @@ function play(callable $getQuestion, string $instruction)
             line("Correct!");
         } else {
             line("'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.");
-            return $gameOver();
+            return line("Let's try again, ${playerName}!");
         }
     }
 
-    return $endGame();
+    return line("Congratulations, ${playerName}!");
 }
