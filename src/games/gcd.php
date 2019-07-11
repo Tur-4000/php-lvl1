@@ -16,10 +16,7 @@ function runGcdGame()
 
         $correctAnswer = getGcd($num1, $num2);
 
-        return [
-            'correctAnswer' => $correctAnswer,
-            'question' => $question
-        ];
+        return [$correctAnswer, $question];
     };
 
     play($makeQuestion, GCD_INSTRUCTION);

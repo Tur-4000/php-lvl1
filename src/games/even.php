@@ -13,10 +13,7 @@ function runEvenGame()
 
         $correctAnswer = isEven($question) ? 'yes' : 'no';
 
-        return [
-            'correctAnswer' => $correctAnswer,
-            'question' => $question
-        ];
+        return [$correctAnswer, $question];
     };
 
     play($makeQuestion, EVEN_INSTRUCTION);

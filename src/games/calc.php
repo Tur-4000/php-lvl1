@@ -28,10 +28,7 @@ function runCalcGame()
                 break;
         }
 
-        return [
-            'correctAnswer' => $correctAnswer,
-            'question' => $question
-        ];
+        return [$correctAnswer, $question];
     };
 
     play($makeQuestion, CALC_INSTRUCTION);

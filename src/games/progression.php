@@ -20,10 +20,7 @@ function runProgressionGame()
 
         $question = implode(' ', $progression);
 
-        return [
-            'correctAnswer' => $missingItem,
-            'question' => $question
-        ];
+        return [$missingItem, $question];
     };
 
     play($makeQuestion, PROGRESSION_INSTRUCTION);

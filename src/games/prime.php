@@ -13,10 +13,7 @@ function runPrimeGame()
 
         $correctAnswer = (isPrime($question)) ? 'yes' : 'no';
 
-        return [
-            'correctAnswer' => $correctAnswer,
-            'question' => $question
-        ];
+        return [$correctAnswer, $question];
     };
 
     play($makeQuestion, PRIME_INSTRUCTION);
