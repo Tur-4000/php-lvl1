@@ -4,10 +4,10 @@ namespace BrainGames\Games;
 
 use function BrainGames\Games\play;
 
+const PRIME_INSTRUCTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 function runPrimeGame()
 {
-    $instruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
     $makeQuestion = function () {
         $question = rand(2, 100);
 
@@ -19,7 +19,7 @@ function runPrimeGame()
         ];
     };
 
-    play($makeQuestion, $instruction);
+    play($makeQuestion, PRIME_INSTRUCTION);
 }
 
 function isPrime($num)
@@ -28,11 +28,11 @@ function isPrime($num)
         return false;
     }
     
-    $divisor = 2;
-    $halfOfNum = ceil($num / 2);
-    while ($num % $divisor !== 0 && $divisor < $halfOfNum) {
-        $divisor += 1;
+    for ($i = 2, $sqrtNum = sqrt($num); $i <= $sqrtNum; $i += 1) {
+        if ($num % $i === 0) {
+            return false;
+        }
     }
 
-    return $num === $divisor;
+    return true;
 }

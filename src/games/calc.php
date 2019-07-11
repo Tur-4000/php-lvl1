@@ -5,11 +5,10 @@ namespace BrainGames\Games;
 use function BrainGames\Games\play;
 
 const OPERATIONS = ['+', '-', '*'];
+const CALC_INSTRUCTION = 'What is the result of the expression?';
 
 function runCalcGame()
 {
-    $instruction = 'What is the result of the expression?';
-
     $makeQuestion = function () {
         $num1 = rand(0, 30);
         $num2 = rand(0, 30);
@@ -35,5 +34,5 @@ function runCalcGame()
         ];
     };
 
-    play($makeQuestion, $instruction);
+    play($makeQuestion, CALC_INSTRUCTION);
 }
