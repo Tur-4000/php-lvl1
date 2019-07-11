@@ -5,8 +5,7 @@ namespace BrainGames\Games;
 use function \cli\line;
 use function \cli\prompt;
 
-const FIRST_TOUR = 1;
-const LAST_TOUR = 3;
+const MAX_COUNT_TOUR = 3;
 
 function play(callable $getQuestion, string $instruction)
 {
@@ -16,7 +15,7 @@ function play(callable $getQuestion, string $instruction)
     $playerName = prompt('May I have your name?');
     line("Hello, ${playerName}!" . PHP_EOL);
 
-    for ($i = FIRST_TOUR; $i <= LAST_TOUR; $i += 1) {
+    for ($i = 1; $i <= MAX_COUNT_TOUR; $i += 1) {
         $question = $getQuestion();
         $correctAnswer = $question['correctAnswer'];
         
