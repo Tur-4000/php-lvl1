@@ -15,8 +15,8 @@ function play(callable $getQuestion, string $instruction)
     $playerName = prompt('May I have your name?');
     line("Hello, ${playerName}!" . PHP_EOL);
 
-    $tour = function ($i) use ($playerName, $getQuestion, &$tour) {
-        if ($i == 0) {
+    $tour = function ($tourCount) use ($playerName, $getQuestion, &$tour) {
+        if ($tourCount == 0) {
             return line("Congratulations, ${playerName}!");
         }
 
