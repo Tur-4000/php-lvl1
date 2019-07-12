@@ -16,10 +16,9 @@ function play(callable $getQuestion, string $instruction)
     line("Hello, ${playerName}!" . PHP_EOL);
 
     for ($i = 1; $i <= MAX_COUNT_TOUR; $i += 1) {
-        $question = $getQuestion();
-        [$correctAnswer, $task] = $question;
+        [$correctAnswer, $question] = $getQuestion();
         
-        line("Question: {$task}");
+        line("Question: {$question}");
         $playerAnswer = prompt('Your answer');
 
         if ($correctAnswer == $playerAnswer) {
