@@ -32,7 +32,7 @@ function play(callable $getQuestion, string $instruction)
             return line("Let's try again, ${playerName}!");
         }
 
-        return $tour($i - 1);
+        return $tour($tourCount - 1);
     };
 
     return $tour(MAX_COUNT_TOUR);
