@@ -15,7 +15,11 @@ function play(callable $getQuestion, string $instruction)
     $playerName = prompt('May I have your name?');
     line("Hello, ${playerName}!" . PHP_EOL);
 
-    for ($i = 1; $i <= MAX_COUNT_TOUR; $i += 1) {
+    $tour = function ($i) use ($playerName, $getQuestion, &$tour) {
+        if ($i == 0) {
+            return line("Congratulations, ${playerName}!");
+        }
+
         [$correctAnswer, $question] = $getQuestion();
         
         line("Question: {$question}");
@@ -27,7 +31,9 @@ function play(callable $getQuestion, string $instruction)
             line("'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.");
             return line("Let's try again, ${playerName}!");
         }
-    }
 
-    return line("Congratulations, ${playerName}!");
+        return $tour($i - 1);
+    };
+
+    return $tour(MAX_COUNT_TOUR);
 }
