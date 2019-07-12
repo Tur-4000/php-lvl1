@@ -2,13 +2,12 @@
 
 namespace BrainGames\Games;
 
-use function \cli\line;
 use function BrainGames\Games\play;
+
+const GCD_INSTRUCTION = 'Find the greatest common divisor of given numbers.';
 
 function runGcdGame()
 {
-    $instruction = 'Find the greatest common divisor of given numbers.';
-
     $makeQuestion = function () {
         $num1 = rand(1, 99);
         $num2 = rand(1, 99);
@@ -17,13 +16,10 @@ function runGcdGame()
 
         $correctAnswer = getGcd($num1, $num2);
 
-        return [
-            'correctAnswer' => $correctAnswer,
-            'question' => $question
-        ];
+        return [$correctAnswer, $question];
     };
 
-    play($makeQuestion, $instruction);
+    play($makeQuestion, GCD_INSTRUCTION);
 }
 
 function getGcd($a, $b)

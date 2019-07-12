@@ -2,25 +2,21 @@
 
 namespace BrainGames\Games;
 
-use function \cli\line;
 use function BrainGames\Games\play;
+
+const PRIME_INSTRUCTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function runPrimeGame()
 {
-    $instruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
     $makeQuestion = function () {
         $question = rand(2, 100);
 
         $correctAnswer = (isPrime($question)) ? 'yes' : 'no';
 
-        return [
-            'correctAnswer' => $correctAnswer,
-            'question' => $question
-        ];
+        return [$correctAnswer, $question];
     };
 
-    play($makeQuestion, $instruction);
+    play($makeQuestion, PRIME_INSTRUCTION);
 }
 
 function isPrime($num)
@@ -29,10 +25,11 @@ function isPrime($num)
         return false;
     }
     
-    $divisor = 2;
-    while ($num % $divisor !== 0) {
-        $divisor += 1;
+    for ($i = 2, $sqrtNum = sqrt($num); $i <= $sqrtNum; $i += 1) {
+        if ($num % $i === 0) {
+            return false;
+        }
     }
 
-    return $num === $divisor;
+    return true;
 }

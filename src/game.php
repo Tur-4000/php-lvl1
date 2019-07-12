@@ -5,8 +5,7 @@ namespace BrainGames\Games;
 use function \cli\line;
 use function \cli\prompt;
 
-const FIRST_TOUR = 1;
-const LAST_TOUR = 3;
+const MAX_COUNT_TOUR = 3;
 
 function play(callable $getQuestion, string $instruction)
 {
@@ -16,51 +15,19 @@ function play(callable $getQuestion, string $instruction)
     $playerName = prompt('May I have your name?');
     line("Hello, ${playerName}!" . PHP_EOL);
 
-    $gameOver = function () use ($playerName) {
-        line("Let's try again, ${playerName}!");
-    };
-
-    $endGame = function () use ($playerName) {
-        return line("Congratulations, ${playerName}!");
-    };
-
-    for ($i = FIRST_TOUR; $i <= LAST_TOUR; $i += 1) {
-        $question = $getQuestion();
- 
-        $correctAnswer = getCorrectAnswer($question);
-        $q = getQuestion($question);
-
-        line("Question: {$q}");
+    for ($i = 1; $i <= MAX_COUNT_TOUR; $i += 1) {
+        [$correctAnswer, $question] = $getQuestion();
+        
+        line("Question: {$question}");
         $playerAnswer = prompt('Your answer');
 
         if ($correctAnswer == $playerAnswer) {
             line("Correct!");
         } else {
             line("'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.");
-            return $gameOver();
+            return line("Let's try again, ${playerName}!");
         }
     }
 
-    return $endGame();
-}
-
-function makeQuestion($correctAnswer, $question)
-{
-    return function ($func) use ($correctAnswer, $question) {
-        return $func($correctAnswer, $question);
-    };
-}
-
-function getCorrectAnswer($func)
-{
-    return $func(function ($correctAnswer, $question) {
-        return $correctAnswer;
-    });
-}
-
-function getQuestion($func)
-{
-    return $func(function ($correctAnswer, $question) {
-        return $question;
-    });
+    return line("Congratulations, ${playerName}!");
 }
