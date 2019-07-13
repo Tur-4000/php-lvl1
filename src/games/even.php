@@ -3,6 +3,7 @@
 namespace BrainGames\Games;
 
 use function BrainGames\Games\play;
+use function BrainGames\Games\makeQuestion;
 
 const EVEN_INSTRUCTION = 'Answer "yes" if number even otherwise answer "no".';
 
