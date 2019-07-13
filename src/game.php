@@ -5,7 +5,7 @@ namespace BrainGames\Games;
 use function \cli\line;
 use function \cli\prompt;
 
-const MAX_COUNT_TOUR = 3;
+const TOUR_MAX_COUNT = 3;
 
 function play(callable $getQuestion, string $instruction)
 {
@@ -35,5 +35,5 @@ function play(callable $getQuestion, string $instruction)
         return $tour($tourCount - 1);
     };
 
-    return $tour(MAX_COUNT_TOUR);
+    return $tour(TOUR_MAX_COUNT);
 }
