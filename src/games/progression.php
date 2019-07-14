@@ -12,7 +12,7 @@ function runProgressionGame()
     $makeQuestion = function () {
         $startOfProgression = rand(1, 10);
         $delta = rand(1, 10);
-        $progression = makeProgression($startOfProgression, $delta);
+        $progression = makeProgression($startOfProgression, $delta, PROGRESSION_LENGTH);
 
         $missingItemIndex = array_rand($progression);
         $missingItem = $progression[$missingItemIndex];
@@ -26,11 +26,11 @@ function runProgressionGame()
     play($makeQuestion, PROGRESSION_INSTRUCTION);
 }
 
-function makeProgression($startOfProgression, $delta)
+function makeProgression($startOfProgression, $delta, $legth)
 {
     $progression = [];
 
-    for ($i = 0; $i < PROGRESSION_LENGTH; $i += 1) {
+    for ($i = 0; $i < $legth; $i += 1) {
         $progression[] = $startOfProgression + $delta * $i;
     }
 
