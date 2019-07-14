@@ -9,7 +9,7 @@ const CALC_INSTRUCTION = 'What is the result of the expression?';
 
 function runCalcGame()
 {
-    $makeQuestion = function () {
+    $makeGameData = function () {
         $num1 = rand(0, 30);
         $num2 = rand(0, 30);
         $operation = OPERATIONS[array_rand(OPERATIONS)];
@@ -31,5 +31,5 @@ function runCalcGame()
         return [$correctAnswer, $question];
     };
 
-    play($makeQuestion, CALC_INSTRUCTION);
+    play($makeGameData, CALC_INSTRUCTION);
 }

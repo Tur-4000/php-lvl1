@@ -3,13 +3,12 @@
 namespace BrainGames\Games;
 
 use function BrainGames\Games\play;
-use function BrainGames\Games\makeQuestion;
 
 const EVEN_INSTRUCTION = 'Answer "yes" if number even otherwise answer "no".';
 
 function runEvenGame()
 {
-    $makeQuestion = function () {
+    $makeGameData = function () {
         $question = rand(0, 99);
 
         $correctAnswer = isEven($question) ? 'yes' : 'no';
@@ -17,7 +16,7 @@ function runEvenGame()
         return [$correctAnswer, $question];
     };
 
-    play($makeQuestion, EVEN_INSTRUCTION);
+    play($makeGameData, EVEN_INSTRUCTION);
 }
 
 function isEven($num)

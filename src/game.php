@@ -5,9 +5,9 @@ namespace BrainGames\Games;
 use function \cli\line;
 use function \cli\prompt;
 
-const TOUR_MAX_COUNT = 3;
+const TOURS_COUNT_MAX = 3;
 
-function play(callable $getQuestion, string $instruction)
+function play(callable $getGameData, string $instruction)
 {
     line("\nWelcome to the Brain Games!");
     line($instruction . PHP_EOL);
@@ -15,12 +15,8 @@ function play(callable $getQuestion, string $instruction)
     $playerName = prompt('May I have your name?');
     line("Hello, ${playerName}!" . PHP_EOL);
 
-    $tour = function ($tourCount) use ($playerName, $getQuestion, &$tour) {
-        if ($tourCount == 0) {
-            return line("Congratulations, ${playerName}!");
-        }
-
-        [$correctAnswer, $question] = $getQuestion();
+    for ($i = 1; $i <= TOURS_COUNT_MAX; $i += 1) {
+        [$correctAnswer, $question] = $getGameData();
         
         line("Question: {$question}");
         $playerAnswer = prompt('Your answer');
@@ -31,9 +27,7 @@ function play(callable $getQuestion, string $instruction)
             line("'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.");
             return line("Let's try again, ${playerName}!");
         }
+    }
 
-        return $tour($tourCount - 1);
-    };
-
-    return $tour(TOUR_MAX_COUNT);
+    return line("Congratulations, ${playerName}!");
 }
