@@ -25,7 +25,7 @@ function isPrime($num)
         return false;
     }
     
-    for ($i = 2, $sqrtNum = sqrt($num); $i <= $sqrtNum; $i += 1) {
+    for ($i = 2, $upperBound = sqrt($num); $i <= $upperBound; $i += 1) {
         if ($num % $i === 0) {
             return false;
         }
