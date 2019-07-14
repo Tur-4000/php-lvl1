@@ -16,7 +16,7 @@ function play(callable $getQuestion, string $instruction)
     line("Hello, ${playerName}!" . PHP_EOL);
 
     $tour = function ($tourCount) use ($playerName, $getQuestion, &$tour) {
-        if ($tourCount == 0) {
+        if ($tourCount > TOURS_COUNT_MAX) {
             return line("Congratulations, ${playerName}!");
         }
 
@@ -32,8 +32,8 @@ function play(callable $getQuestion, string $instruction)
             return line("Let's try again, ${playerName}!");
         }
 
-        return $tour($tourCount - 1);
+        return $tour($tourCount + 1);
     };
 
-    return $tour(TOURS_COUNT_MAX);
+    return $tour(1);
 }
