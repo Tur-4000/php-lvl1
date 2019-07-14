@@ -9,7 +9,7 @@ const PROGRESSION_INSTRUCTION = 'What number is missing in the progression?';
 
 function runProgressionGame()
 {
-    $makeQuestion = function () {
+    $makeGameData = function () {
         $startOfProgression = rand(1, 10);
         $delta = rand(1, 10);
         $progression = makeProgression($startOfProgression, $delta, PROGRESSION_LENGTH);
@@ -23,7 +23,7 @@ function runProgressionGame()
         return [$missingItem, $question];
     };
 
-    play($makeQuestion, PROGRESSION_INSTRUCTION);
+    play($makeGameData, PROGRESSION_INSTRUCTION);
 }
 
 function makeProgression($startOfProgression, $delta, $legth)

@@ -7,7 +7,7 @@ use function \cli\prompt;
 
 const TOURS_COUNT_MAX = 3;
 
-function play(callable $getQuestion, string $instruction)
+function play(callable $getGameData, string $instruction)
 {
     line("\nWelcome to the Brain Games!");
     line($instruction . PHP_EOL);
@@ -16,7 +16,7 @@ function play(callable $getQuestion, string $instruction)
     line("Hello, ${playerName}!" . PHP_EOL);
 
     for ($i = 1; $i <= TOURS_COUNT_MAX; $i += 1) {
-        [$correctAnswer, $question] = $getQuestion();
+        [$correctAnswer, $question] = $getGameData();
         
         line("Question: {$question}");
         $playerAnswer = prompt('Your answer');
