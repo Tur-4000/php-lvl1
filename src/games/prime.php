@@ -1,10 +1,10 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Prime;
 
-use function BrainGames\Games\play;
+use function BrainGames\Game\play;
 
-const PRIME_INSTRUCTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const INSTRUCTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function runPrimeGame()
 {
@@ -16,7 +16,7 @@ function runPrimeGame()
         return [$correctAnswer, $question];
     };
 
-    play($makeGameData, PRIME_INSTRUCTION);
+    play($makeGameData, INSTRUCTION);
 }
 
 function isPrime($num)

@@ -1,11 +1,11 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Calc;
 
-use function BrainGames\Games\play;
+use function BrainGames\Game\play;
 
 const OPERATIONS = ['+', '-', '*'];
-const CALC_INSTRUCTION = 'What is the result of the expression?';
+const INSTRUCTION = 'What is the result of the expression?';
 
 function runCalcGame()
 {
@@ -31,5 +31,5 @@ function runCalcGame()
         return [$correctAnswer, $question];
     };
 
-    play($makeGameData, CALC_INSTRUCTION);
+    play($makeGameData, INSTRUCTION);
 }

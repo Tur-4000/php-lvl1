@@ -1,10 +1,10 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Even;
 
-use function BrainGames\Games\play;
+use function BrainGames\Game\play;
 
-const EVEN_INSTRUCTION = 'Answer "yes" if number even otherwise answer "no".';
+const INSTRUCTION = 'Answer "yes" if number even otherwise answer "no".';
 
 function runEvenGame()
 {
@@ -16,7 +16,7 @@ function runEvenGame()
         return [$correctAnswer, $question];
     };
 
-    play($makeGameData, EVEN_INSTRUCTION);
+    play($makeGameData, INSTRUCTION);
 }
 
 function isEven($num)
