@@ -25,9 +25,9 @@ function play(callable $getGameData, string $instruction)
             line("Correct!");
         } else {
             line("'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.");
-            return line("Let's try again, ${playerName}!");
+            exit("Let's try again, ${playerName}!" . PHP_EOL);
         }
     }
 
-    return line("Congratulations, ${playerName}!");
+    line("Congratulations, ${playerName}!");
 }
