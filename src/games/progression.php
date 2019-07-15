@@ -1,11 +1,11 @@
 <?php
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Progression;
 
-use function BrainGames\Games\play;
+use function BrainGames\Game\play;
 
 const PROGRESSION_LENGTH = 10;
-const PROGRESSION_INSTRUCTION = 'What number is missing in the progression?';
+const INSTRUCTION = 'What number is missing in the progression?';
 
 function runProgressionGame()
 {
@@ -23,7 +23,7 @@ function runProgressionGame()
         return [$missingItem, $question];
     };
 
-    play($makeGameData, PROGRESSION_INSTRUCTION);
+    play($makeGameData, INSTRUCTION);
 }
 
 function makeProgression($startOfProgression, $delta, $legth)
