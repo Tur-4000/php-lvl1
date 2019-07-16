@@ -26,11 +26,11 @@ function runProgressionGame()
     play($makeGameData, INSTRUCTION);
 }
 
-function makeProgression($startOfProgression, $delta, $legth)
+function makeProgression($startOfProgression, $delta, $progressionLength)
 {
     $progression = [];
 
-    for ($i = 0; $i < $legth; $i += 1) {
+    for ($i = 0; $i < $progressionLength; $i += 1) {
         $progression[] = $startOfProgression + $delta * $i;
     }
 
